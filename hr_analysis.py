@@ -55,10 +55,9 @@ if "부서" in df.columns:
     st.subheader("부서별 퇴직율")
     fig1, ax1 = plt.subplots(figsize=(7.5,3.8))
     sns.barplot(x=dept.index, y=dept.values, ax=ax1)
+    ax1.set_xlabel("부서", fontproperties=fontprop)
     ax1.set_ylabel("퇴직율(%)", fontproperties=fontprop); 
     labels = ax1.bar_label(ax1.containers[0], fmt="%.1f")
-    for lbl in labels:
-        lbl.set_fontproperties(fontprop)
     plt.xticks(rotation=15); 
     st.pyplot(fig1)
 
@@ -87,6 +86,7 @@ if col_name in df.columns:
         st.subheader("⏰ 야근정도별 퇴직율")
         fig3, ax3 = plt.subplots(figsize=(6.5,3.5))
         sns.barplot(x=ot.index, y=ot.values, ax=ax3)
+        ax3.set_xlabel("야근 여부", fontproperties=fontprop)
         ax3.set_ylabel("퇴직율(%)", fontproperties=fontprop); 
-        ax3.bar_label(ax3.containers[0], fmt="%.1f", fontproperties=fontprop)
+        ax3.bar_label(ax3.containers[0], fmt="%.1f")
         st.pyplot(fig3)
