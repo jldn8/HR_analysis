@@ -43,7 +43,7 @@ st.title("다양성 HR 대시보드")
 
 n = len(df); quit_n = int(df["퇴직"].sum())
 
-female_ratio = (df["성별"].value_counts(normalize=True).get("여성", 0)) * 100
+female_ratio = (df["성별"].value_counts(normalize=True).get("Female", 0)) * 100
 mean_age = df["나이"].mean()
 
 k1, k2, k3 = st.columns(3)
@@ -95,7 +95,7 @@ if "결혼여부" in df.columns and "야근정도" in df.columns and "성별" in
     ax3.set_ylabel("비율(%)", fontproperties=fontprop)
     ax3.set_xlabel("결혼여부", fontproperties=fontprop)
     ax3.set_xticklabels(ax3.get_xticklabels(), fontproperties=fontprop)
-    ax3.legend(title="성별", prop=fontprop)
+    ax3.legend(title="성별", fontproperties=fontprop)
     st.pyplot(fig3)
 else:
     st.info("⚠️ 데이터에 [결혼여부], [야근정도], [성별] 컬럼이 필요합니다.")
