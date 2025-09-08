@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-# import koreanize_matplotlib  # 한글/마이너스 자동 설정
 import matplotlib.font_manager as fm
 import warnings
 warnings.filterwarnings(action='ignore')
