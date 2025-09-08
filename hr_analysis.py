@@ -56,7 +56,7 @@ if "부서" in df.columns:
     fig1, ax1 = plt.subplots(figsize=(7.5,3.8))
     sns.barplot(x=dept.index, y=dept.values, ax=ax1)
     ax1.set_ylabel("퇴직율(%)", fontproperties=fontprop); 
-    ax1.bar_label(ax1.containers[0], fmt="%.1f")
+    ax1.bar_label(ax1.containers[0], fmt="%.1f", )
     plt.xticks(rotation=15); 
     st.pyplot(fig1)
 
@@ -72,8 +72,8 @@ if "급여증가분백분율" in df.columns:
         st.subheader("💰 급여인상율과 퇴직율")
         fig2, ax2 = plt.subplots(figsize=(6.5,3.5))
         sns.lineplot(x=sal.index, y=sal.values, marker="o", ax=ax2)
-        ax2.set_xlabel("급여인상율(%)"); 
-        ax2.set_ylabel("퇴직율(%)")
+        ax2.set_xlabel("급여인상율(%)", fontproperties=fontprop); 
+        ax2.set_ylabel("퇴직율(%)", fontproperties=fontprop)
         st.pyplot(fig2)
 
 # (우) 야근정도별 퇴직율 (Yes/No 막대)
@@ -85,6 +85,6 @@ if col_name in df.columns:
         st.subheader("⏰ 야근정도별 퇴직율")
         fig3, ax3 = plt.subplots(figsize=(6.5,3.5))
         sns.barplot(x=ot.index, y=ot.values, ax=ax3)
-        ax3.set_ylabel("퇴직율(%)"); 
+        ax3.set_ylabel("퇴직율(%)", fontproperties=fontprop); 
         ax3.bar_label(ax3.containers[0], fmt="%.1f")
         st.pyplot(fig3)
