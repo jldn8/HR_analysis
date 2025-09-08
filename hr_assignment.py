@@ -95,7 +95,7 @@ if "결혼여부" in df.columns and "야근정도" in df.columns and "성별" in
     ax3.set_ylabel("비율(%)", fontproperties=fontprop)
     ax3.set_xlabel("결혼여부", fontproperties=fontprop)
     ax3.set_xticklabels(ax3.get_xticklabels(), fontproperties=fontprop)
-    ax3.legend(title="성별", fontproperties=fontprop)
+    ax3.legend(title="성별", title_fontproperties=fontprop, prop=fontprop)
     st.pyplot(fig3)
 else:
     st.info("⚠️ 데이터에 [결혼여부], [야근정도], [성별] 컬럼이 필요합니다.")
