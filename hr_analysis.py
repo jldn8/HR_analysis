@@ -56,7 +56,7 @@ if "부서" in df.columns:
     fig1, ax1 = plt.subplots(figsize=(7.5,3.8))
     sns.barplot(x=dept.index, y=dept.values, ax=ax1)
     ax1.set_ylabel("퇴직율(%)", fontproperties=fontprop); 
-    ax1.bar_label(ax1.containers[0], fmt="%.1f", )
+    ax1.bar_label(ax1.containers[0], fmt="%.1f", fontproperties=fontprop)
     plt.xticks(rotation=15); 
     st.pyplot(fig1)
 
@@ -86,5 +86,5 @@ if col_name in df.columns:
         fig3, ax3 = plt.subplots(figsize=(6.5,3.5))
         sns.barplot(x=ot.index, y=ot.values, ax=ax3)
         ax3.set_ylabel("퇴직율(%)", fontproperties=fontprop); 
-        ax3.bar_label(ax3.containers[0], fmt="%.1f")
+        ax3.bar_label(ax3.containers[0], fmt="%.1f", fontproperties=fontprop)
         st.pyplot(fig3)
